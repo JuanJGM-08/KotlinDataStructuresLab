@@ -14,5 +14,6 @@ fun main(){
     reto12()
     reto13()
     reto14()
+    reto15()
     print (" FIN DEL LABORATORIO ")
 }
