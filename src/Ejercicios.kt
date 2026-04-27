@@ -135,3 +135,17 @@ fun reto11() {
     println("\n--- Reto 11: Organizador de Maleta ---")
     println("Objetos por peso: $porPeso")
 }
+
+fun reto12() {
+    val ruta = listOf(1 to 1, 2 to 2, 3 to 3, 2 to 2, 1 to 1)
+    var esEspejo = true
+    for (i in 0 until ruta.size / 2) {
+        if (ruta[i] != ruta[ruta.size - 1 - i]) {
+            esEspejo = false
+            break
+        }
+    }
+
+    println("\n--- Reto 12: Ruta Espejo ---")
+    println("¿Es espejo?: $esEspejo")
+}
