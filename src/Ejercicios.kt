@@ -253,3 +253,18 @@ fun reto20() {
     println("\n--- Reto 20: Unión Agendas ---")
     println("Agenda Fusionada: $fusion")
 }
+fun reto21() {
+    val n = 100
+    val esPrimo = BooleanArray(n + 1) { true }
+    esPrimo[0] = false
+    esPrimo[1] = false
+    for (p in 2..Math.sqrt(n.toDouble()).toInt()) {
+        if (esPrimo[p]) {
+            for (i in p * p..n step p) esPrimo[i] = false
+        }
+    }
+    val pisosPrimos = (1..n).filter { esPrimo[it] }
+
+    println("\n--- Reto 21: Pisos Primos ---")
+    println("Pisos con mantenimiento: $pisosPrimos")
+}
