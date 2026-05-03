@@ -268,3 +268,32 @@ fun reto21() {
     println("\n--- Reto 21: Pisos Primos ---")
     println("Pisos con mantenimiento: $pisosPrimos")
 }
+fun reto22() {
+    val pila = mutableListOf<String>()
+    fun push(plato: String) = pila.add(plato)
+    fun pop(): String? = if (pila.isNotEmpty()) pila.removeAt(pila.size - 1) else null
+
+    println("\n--- Reto 22: Pila de Platos ---")
+    push("Plato Base")
+    push("Plato Sopa")
+    println("Lavando: ${pop()}")
+    println("Pila restante: $pila")
+}
+fun reto23() {
+    val calorias = listOf(2000.0, 2200.0, 1800.0, 2100.0, 2500.0)
+    val diferencias = mutableListOf<Double>()
+    var sumaAnterior = 0.0
+
+    for (i in calorias.indices) {
+        if (i == 0) {
+            diferencias.add(0.0)
+        } else {
+            val promedioAnterior = sumaAnterior / i
+            diferencias.add(calorias[i] - promedioAnterior)
+        }
+        sumaAnterior += calorias[i]
+    }
+
+    println("\n--- Reto 23: Seguimiento Dieta ---")
+    println("Diferencias vs Promedio Anterior: $diferencias")
+}
