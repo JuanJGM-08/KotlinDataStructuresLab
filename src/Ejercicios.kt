@@ -324,3 +324,32 @@ fun reto25() {
     println("\n--- Reto 25: Rendimiento Maratón ---")
     println("Promedio sin outliers: $promedioReal")
 }
+fun reto26() {
+    val logs = listOf("UP", "UP", "DOWN", "UP", "DOWN", "DOWN")
+    val comprimido = mutableListOf<Pair<String, Int>>()
+    if (logs.isNotEmpty()) {
+        var actual = logs[0]
+        var cuenta = 0
+        for (log in logs) {
+            if (log == actual) {
+                cuenta++
+            } else {
+                comprimido.add(actual to cuenta)
+                actual = log
+                cuenta = 1
+            }
+        }
+        comprimido.add(actual to cuenta)
+    }
+
+    println("\n--- Reto 26: Compresión Logs ---")
+    println("Resumen: $comprimido")
+}
+fun reto27() {
+    val ventas = mapOf("Juan" to 5000.0, "Ana" to 8000.0, "Luis" to 4000.0, "Marta" to 9000.0)
+    val promedio = ventas.values.average()
+    val premiados = ventas.filter { it.value > promedio }.keys
+
+    println("\n--- Reto 27: Premios Vendedores ---")
+    println("Promedio: $promedio, Premiados: $premiados")
+}
