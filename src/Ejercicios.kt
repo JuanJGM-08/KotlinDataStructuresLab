@@ -101,7 +101,6 @@ fun reto8() {
     println("\n--- Reto 8: Promedio Académico ---")
     println("Nota Final: $notaFinal")
 }
-
 fun reto9() {
     val paises = mapOf("CO" to "Colombia", "MX" to "México", "AR" to "Argentina", "ES" to "España")
 
